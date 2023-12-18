@@ -31,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['walltap.herokuapp.com', '8000-daniel009891-drift-news-93xdxgpimw.us2.codeanyapp.com', 'localhost']
+ALLOWED_HOSTS = ['walltap-229162c12b90.herokuapp.com',
+                 '8000-daniel009891-drift-news-93xdimw.us2.codeanyapp.com'xgp, 'localhost']
 
 
 # Application definition
