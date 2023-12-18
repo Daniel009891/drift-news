@@ -1,1 +1,1 @@
-web: gunicorn walltap.wsgi
+web: gunicorn news.wsgi
