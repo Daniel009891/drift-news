@@ -20,7 +20,7 @@ class Article(models.Model):
 
 
     class Meta:
-        ordering = ['-votes']
+        ordering = ['-updated_on']
 
 
     def __str__(self):
@@ -28,4 +28,20 @@ class Article(models.Model):
 
 
     def number_of_votes(self):
-        return self.likes.count()
+        return self.votes_total.count()
+
+
+class Comment(models.Model):
+
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    approved = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['created_on']
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
