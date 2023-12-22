@@ -15,7 +15,10 @@ class Article(models.Model):
     excerpt = models.TextField(blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
-    votes_total = models.ManyToManyField(User, related_name='votes', blank=True)
+    thumbs_up = models.IntegerField(default=0)
+    thumbs_down = models.IntegerField(default=0)
+    thumbs = models.ManyToManyField(User, related_name='thumbs', default=None, blank=True)
+    
     
 
 
