@@ -34,18 +34,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home <i class="fa-solid fa-house"></i></a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home <i class="fa-solid fa-house"></i></a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Register <i class="fa-regular fa-address-card"></i></a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register <i class="fa-regular fa-address-card"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                     </li>
                     {% endif %}
                     <li class="nav-item dropdown">
