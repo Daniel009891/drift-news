@@ -2,3 +2,23 @@
     font-family: 'Exo', sans-serif;
     font-family: 'Permanent Marker', cursive;
 }
+
+span.helptext a {
+    display: none;
+}
+
+.sign_up {
+    background-color: rgba(211, 211, 211, 0.5); 
+}
+
+button {
+    margin-bottom: 10px;
+    background-color:aliceblue;
+    border-radius: 5px;
+    border: 1px solid;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid;
+}
