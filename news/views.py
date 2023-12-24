@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Article
+from .forms import CommentForm
 
 
 
@@ -27,6 +28,7 @@ class ArticleDetail(View):
             {
                 "article": article,
                 "comments": comments,
+                "comment_form": CommentForm(),
 
             },
         )

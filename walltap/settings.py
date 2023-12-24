@@ -69,6 +69,10 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.8000-daniel009891-drift-news-93xdxgpimw.us2.codeanyapp.com', 
+    'https://*.walltap-229162c12b90.herokuapp.com']
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -114,7 +118,6 @@ WSGI_APPLICATION = 'walltap.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 
 # Password validation
