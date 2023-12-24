@@ -30,8 +30,7 @@ class Article(models.Model):
         return self.title
 
 
-    def number_of_votes(self):
-        return self.votes_total.count()
+    
 
 
 class Comment(models.Model):
