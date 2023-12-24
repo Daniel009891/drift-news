@@ -1,11 +1,27 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Article
 from .forms import CommentForm
+from django.views.generic.edit import UpdateView, DeleteView
 
 
+class CommentUpdateView(UpdateView):
+    model = Comment
+    comment_form = CommentForm
+    template_name = 'comment_update.html'
+    
+    def get_success_url(self):
+        return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
+
+class CommentDeleteView(UpdateView):
+    model = Comment
+    comment_form = CommentForm
+    template_name = 'comment_delete.html'
+
+    def get_success_url(self):
+        return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
 
 class ArticleList(generic.ListView):
@@ -50,8 +66,6 @@ class ArticleDetail(View):
         else:
             comment_form = CommentForm()
 
-
-
         return render(
             request,
             "article_detail.html",
@@ -63,6 +77,3 @@ class ArticleDetail(View):
 
             },
         )
-
-
-    

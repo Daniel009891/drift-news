@@ -18,19 +18,12 @@ class Article(models.Model):
     thumbs_up = models.IntegerField(default=0)
     thumbs_down = models.IntegerField(default=0)
     thumbs = models.ManyToManyField(User, related_name='thumbs', default=None, blank=True)
-    
-    
-
 
     class Meta:
         ordering = ['-updated_on']
 
-
     def __str__(self):
         return self.title
-
-
-    
 
 
 class Comment(models.Model):
@@ -47,3 +40,5 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.name}"
+
+

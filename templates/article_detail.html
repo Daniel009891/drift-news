@@ -92,7 +92,11 @@
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    {% if request.user == comment.author %}
+                    <a href="#"><i class="fa-solid fa-trash"></i></a>
+                    {% endif %}
                 </form>
+
                 {% endif %}
                 {% endif %}
             </div>
