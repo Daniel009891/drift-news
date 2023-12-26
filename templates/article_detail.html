@@ -72,10 +72,13 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                         {% if request.user == comment.commenter %}
-                            <span><a href="" style="color: #333;"><button type="submit">Delete Comment</button><i class="fas fa-trash"></i></a></span>
-                            <span><a href="" style="color: #333;"><button type="submit">Edit Comment</button><i class="fa-solid fa-pen-to-square"></i></a></span>
+                            <span><a href="" style="color: #333;"><button type="submit"><i class="fas fa-trash"></i> Delete Comment </button></a></span>
+                            <span><a href="" style="color: #333;"><button type="submit"><i class="fa-solid fa-pen-to-square"></i> Edit Comment </button></a></span>
                         {% else %}
-                            
+                            <span><a href="" style="color: rgb(211, 211, 211);"><button type="button" disabled><i class="fas fa-trash"></i> Delete Comment
+                                    </button></a></span>
+                            <span><a href="" style="color: rgb(211, 211, 211);"><button type="button" disabled><i class="fa-solid fa-pen-to-square"></i> Edit Comment
+                                    </button></a></span>
                         {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
