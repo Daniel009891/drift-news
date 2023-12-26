@@ -6,11 +6,22 @@ from .forms import CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 
 
-class CommentUpdateView(UpdateView):
+class CommentUpdateView(generic.UpdateView):
     model = Comment
-    comment_form = CommentForm
-    template_name = 'comment_update.html'
     
+    fields = ['body']
+    template_name = 'comment_edit.html'
+
+    def form_valid(self, comment_form):
+        comment_form.instance.approved = False
+        comment_form.instance,edited = True
+        self.object = comment_form.save()
+        return super().form_valid(comment_form)
+
+        
+        
+       
+        
     def get_success_url(self):
         return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
