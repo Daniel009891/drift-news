@@ -17,7 +17,6 @@ class CommentUpdateView(UpdateView):
 
 class CommentDeleteView(DeleteView):
     model = Comment
-    form_class = CommentForm
     template_name = 'comment_delete.html'
 
     def delete(self, request, *args, **kwargs):
