@@ -17,8 +17,8 @@ class ArticleAdmin(SummernoteModelAdmin):
 class CommentAdmin(admin.ModelAdmin):
 
     list_filter = ('approved', 'created_on')
-    list_display = ('name', 'body', 'article', 'created_on', 'approved')
-    search_fields = ['name', 'email', 'body']
+    list_display = ('commenter', 'body', 'article', 'created_on', 'approved')
+    search_fields = ['commenter', 'email', 'body']
     actions = ['approve_comments']
 
     @admin.action(description='Mark selected comment(s) as approved?')

@@ -27,9 +27,8 @@ class Article(models.Model):
 
 
 class Comment(models.Model):
-    commenter = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name="comment_commenter")
+    commenter = models.ForeignKey(User, on_delete=models.CASCADE, null=False, related_name="comment_commenter")
     article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=80)
     email = models.EmailField()
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)

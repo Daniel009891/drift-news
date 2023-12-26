@@ -63,7 +63,7 @@
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         <!-- The commenter's name goes here. Check the model if you're not sure what that is -->
-                        {{ comment.name }}
+                        {{ comment.commenter }}
                         <span class=" text-muted font-weight-normal">
                             <!-- The comment's created date goes here -->
                             {{ comment.created_on }}
@@ -71,10 +71,11 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
-                        {% if request.user == comment.name %}
-                            <a href="" style="color: #333;"><i class="fas fa-trash"></i></a>
+                        {% if request.user == comment.commenter %}
+                            <span><a href="" style="color: #333;"><button type="submit">Delete Comment</button><i class="fas fa-trash"></i></a></span>
+                            <span><a href="" style="color: #333;"><button type="submit">Edit Comment</button><i class="fa-solid fa-pen-to-square"></i></a></span>
                         {% else %}
-                            <P>You must be logged in to delete a comment</P>
+                            
                         {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
@@ -97,6 +98,8 @@
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                {% else %}
+                <p>Please log in to create, update of delete a comment</p>
                 </form>
 
                 {% endif %}
