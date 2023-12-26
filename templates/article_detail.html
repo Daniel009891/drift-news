@@ -71,6 +71,11 @@
                     </p>
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
+                        {% if request.user == comment.name %}
+                            <a href="" style="color: #333;"><i class="fas fa-trash"></i></a>
+                        {% else %}
+                            <P>You must be logged in to delete a comment</P>
+                        {% endif %}
                 </div>
                 <!-- Our for loop ends here -->
                 {% endfor %}
@@ -92,9 +97,6 @@
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    {% if request.user == comment.author %}
-                    <a href="#"><i class="fa-solid fa-trash"></i></a>
-                    {% endif %}
                 </form>
 
                 {% endif %}

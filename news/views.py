@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.http import HttpResponseRedirect
 from django.views import generic, View
-from .models import Article
+from .models import Article, Comment
 from .forms import CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 
@@ -15,10 +15,13 @@ class CommentUpdateView(UpdateView):
         return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
 
-class CommentDeleteView(UpdateView):
+class CommentDeleteView(DeleteView):
     model = Comment
-    comment_form = CommentForm
+    form_class = CommentForm
     template_name = 'comment_delete.html'
+
+    def delete(self, request, *args, **kwargs):
+        return super(CommentDeleteView, self).delete(request, *args, **kwargs)
 
     def get_success_url(self):
         return reverse('article_detail', kwargs={'slug': self.object.article.slug})
