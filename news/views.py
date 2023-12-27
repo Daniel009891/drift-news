@@ -6,24 +6,58 @@ from .forms import CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 
 
-class CommentUpdateView(generic.UpdateView):
-    model = Comment
-    
-    fields = ['body']
-    template_name = 'comment_edit.html'
 
-    def form_valid(self, comment_form):
-        comment_form.instance.approved = False
-        comment_form.instance,edited = True
-        self.object = comment_form.save()
-        return super().form_valid(comment_form)
+def edit_comment(request, comment_id):
 
+    comment = get_object_or_404(Comment, pk=comment_id)
+    form = CommentForm()
+    slug = comment.article.slug
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST, request.FILES,)
+        if form.is_valid():
+            form.save()
+            return reverse('article_detail', kwargs={'slug': comment.article.slug})
+
+    else:
+        form = CommentForm(instance=comment)
         
+    template = 'comment_edit.html'
+
+    context = {
+        'form': form,
+        'comment': comment,
+    }
+
+    return render(request, template, context)
+
+class CommentUpdateView(UpdateView):
+    model= Comment
+    template_name = 'comment_edit'
+
+#     def get(self, request, body, *args, **kwargs):
+
+#         comment = get_object_or_404(Comment, pk=pk)
+#         if request.method == 'POST':
+#             comment.body = request.POST.get('comment')
+#             if form.is_valid():
+#                 form.save()
+#                 return redirect('home')
+#         comment_form = CommentForm(instance=comment)
+#         context = {
+#             'comment_form': comment_form
+#         }
+        
+#         return render(
+#             request,
+#             './comment_edit',
+#             context,
+#         )
         
        
         
-    def get_success_url(self):
-        return reverse('article_detail', kwargs={'slug': self.object.article.slug})
+    # def get_success_url(self):
+    #     return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
 
 class CommentDeleteView(DeleteView):

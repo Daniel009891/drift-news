@@ -8,20 +8,14 @@
             <a href="{% url 'home' %}" class="btn btn-outline-success btn-lg">Back to homepage</a>
         </div>
     </div>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5 col-sm-12">
-            <h5>Update Your Post</h5>
-        </div>
-    </div>
     <div class="row justify-content-center mt-3 mb-5">
-        {% if request.user == comment.commenter %}
+        <!-- {% if request.user == comment.commenter %} -->
             <div class="col-md-5 col-sm-12">
                 <h3>Update your comment:</h3>
                 <p>Editing as: {{ user.username }}</p>
-                <form method="post" style="margin-top: 1.3em;">
-                    {{ comment_form | crispy }}
+                <form action= "{% url 'comment_edit' comment.id %}" method="post" style="margin-top: 1.3em;">
                     {% csrf_token %}
-                    
+                    {{ form.as_p }}
                     <button type="submit" class="btn btn-outline-success btn-lg">Submit</button>
                     </div>
                 </form>
