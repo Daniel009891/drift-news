@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Article, Comment
@@ -6,22 +6,22 @@ from .forms import CommentForm
 from django.views.generic.edit import UpdateView, DeleteView
 
 
-
 def edit_comment(request, comment_id):
 
     comment = get_object_or_404(Comment, pk=comment_id)
-    form = CommentForm()
-    slug = comment.article.slug
 
     if request.method == 'POST':
-        form = CommentForm(request.POST, request.FILES,)
+        form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
-            form.save()
-            return reverse('article_detail', kwargs={'slug': comment.article.slug})
+            instance = form.save(commit=False)
+            instance.article = Article.objects.get(id=comment.article.id)
+            instance.commenter = request.user
+            instance.save()
+            return redirect('article_detail', slug=comment.article.slug)
 
     else:
         form = CommentForm(instance=comment)
-        
+
     template = 'comment_edit.html'
 
     context = {
@@ -31,9 +31,10 @@ def edit_comment(request, comment_id):
 
     return render(request, template, context)
 
-class CommentUpdateView(UpdateView):
-    model= Comment
-    template_name = 'comment_edit'
+
+# class CommentUpdateView(UpdateView):
+#     model = Comment
+#     template_name = 'comment_edit'
 
 #     def get(self, request, body, *args, **kwargs):
 
@@ -47,15 +48,13 @@ class CommentUpdateView(UpdateView):
 #         context = {
 #             'comment_form': comment_form
 #         }
-        
+
 #         return render(
 #             request,
 #             './comment_edit',
 #             context,
 #         )
-        
-       
-        
+
     # def get_success_url(self):
     #     return reverse('article_detail', kwargs={'slug': self.object.article.slug})
 
@@ -83,7 +82,8 @@ class ArticleDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
-        comments = article.comments.filter(approved=True).order_by('created_on')
+        comments = article.comments.filter(
+            approved=True).order_by('created_on')
 
         return render(
             request,
