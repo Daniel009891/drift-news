@@ -73,20 +73,19 @@
           </p>
           <!-- The body of the comment goes before the | -->
           {{ comment.body | linebreaks }} 
-          {% if request.user == comment.commenter %}
+        {% if request.user == comment.commenter %}
           <span
             ><a href="{% url 'comment_delete' comment.id %}"
               ><button type="button" class="btn btn-outline-danger btn-sm">
                 <i class="fas fa-trash"></i> Delete Comment
               </button></a
-            ></span>
-          <span
-            ><a href="{% url 'comment_edit' comment.id %}"
+            ></span
+          >
+          <span><a href="{% url 'comment_edit' comment.id %}"
               ><button type="button" class="btn btn-outline-success btn-sm">
                 <i class="fa-solid fa-pen-to-square"></i> Edit Comment
-              </button></a
-            ></span>
-            {% endif %}
+              </button></a></span>
+        {% endif %}
         </div>
         <!-- Our for loop ends here -->
     {% endfor %}

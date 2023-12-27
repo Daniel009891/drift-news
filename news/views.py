@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Article, Comment
 from .forms import CommentForm
+from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
 
 
@@ -17,7 +18,9 @@ def edit_comment(request, comment_id):
             instance.article = Article.objects.get(id=comment.article.id)
             instance.commenter = request.user
             instance.save()
+            messages.success(request,'Your comment has been updated successfully')
             return redirect('article_detail', slug=comment.article.slug)
+        
 
     else:
         form = CommentForm(instance=comment)
