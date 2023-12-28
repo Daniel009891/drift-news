@@ -50,10 +50,10 @@ class Comment(models.Model):
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=80, blank=True)
-    email = models.EmailField(blank=True)
-    subject = models.CharField(max_length=60, blank=True)
-    enquiry = models.TextField(blank=True)
+    name = models.CharField(max_length=80)
+    email = models.EmailField()
+    subject = models.CharField(max_length=60,)
+    enquiry = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(default=False)
 

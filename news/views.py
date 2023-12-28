@@ -8,23 +8,34 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 
 def contact_form(request):
-    form_class = ContactForm
 
-    form = form_class(request.POST)
+    # contact_form = ContactForm(data=request.POST)
+    # if request.method == 'POST':
+    #     if contact_form.is_valid():
+    #         contact_form.instance.name = request.name
+    #         email = request.Post.get('email')
+    #         subject = request.Post.get('subject')
+    #         enquiry = request.Post.get('enquiry')
+    #         contact.completed = False
+    #         contact_form.save()
+        #     messages.success(request,'Your enquiry has been submitted to admin successfully')
+        #     return HttpResponseRedirect('/contact')
+        # else:
+        #     messages.error(request, 'Error sending enquiry')
+
     if request.method == 'POST':
+        form = ContactForm(request.POST)
         if form.is_valid():
-            name = request.Post
-            email = request.Post
-            subject = request.Post
-            enquiry = request.Post
-            contact.completed = False
             form.save()
             messages.success(request,'Your enquiry has been submitted to admin successfully')
             return HttpResponseRedirect('/contact')
         else:
             messages.error(request, 'Error sending enquiry')
+            
+    form = ContactForm()
+    context = {'form': form}
 
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact.html', context)
 
 
 def edit_comment(request, comment_id):

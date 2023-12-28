@@ -1,5 +1,5 @@
 from django.contrib import admin, messages
-from .models import Article, Comment
+from .models import Article, Comment, Contact
 from django_summernote.admin import SummernoteModelAdmin
 
 
@@ -24,3 +24,11 @@ class CommentAdmin(admin.ModelAdmin):
     @admin.action(description='Mark selected comment(s) as approved?')
     def approve_comments(self, request, queryset):
         queryset.update(approved=True)
+
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+    list_filter = ('completed', 'created_on')
+    list_display = ('name', 'email', 'subject', 'created_on', 'completed')
+    search_fields = ['name', 'email',]
+    actions = ['completed']
