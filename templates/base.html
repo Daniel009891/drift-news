@@ -33,9 +33,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home <i class="fa-solid fa-house"></i></a>
-                    </li>
+                    </li> -->
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout <i class="fa-solid fa-arrow-right-from-bracket"></i></a>
@@ -54,11 +54,11 @@
                             Contact Us
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'contact' %}">Submit an enquiry to the team</a></li>
-                            <li>
+                            <li><a class="dropdown-item" href="{% url 'contact' %}">Submit an enquiry</a></li>
+                            <!-- <li>
                                 <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </li> -->
+                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                         </ul>
                     </li>
                     <li class="nav-item">
