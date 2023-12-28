@@ -50,7 +50,6 @@ class Comment(models.Model):
 
 
 class Contact(models.Model):
-
     name = models.CharField(max_length=80, blank=True)
     email = models.EmailField(blank=True)
     subject = models.CharField(max_length=60, blank=True)
@@ -60,8 +59,6 @@ class Contact(models.Model):
 
 
     def __str__(self):
-        
+
         return self.name
 
-
-    
