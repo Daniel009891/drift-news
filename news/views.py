@@ -71,6 +71,7 @@ class CommentDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse('article_detail', kwargs={'slug': self.object.article.slug})
+        messages.success(request,'Your comment has been deleted successfully')
 
 
 class ArticleList(generic.ListView):

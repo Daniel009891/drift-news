@@ -5,6 +5,8 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# adapted code institute model from blog walkthrough project
+
 class Article(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
@@ -24,6 +26,8 @@ class Article(models.Model):
         return self.title
 
 
+# adapted code institute model from blog walkthrough project
+
 class Comment(models.Model):
     commenter = models.ForeignKey(
         User, on_delete=models.CASCADE, null=False, related_name="comment_commenter")
@@ -41,5 +45,23 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.name}"
 
 
-# class Booking(models.Model):
+
+# custom model for user to submit a contact form to the admin
+
+
+class Contact(models.Model):
+
+    name = models.CharField(max_length=80, blank=True)
+    email = models.EmailField(blank=True)
+    subject = models.CharField(max_length=60, blank=True)
+    enquiry = models.TextField(blank=True)
+    created_on = models.DateTimeField(auto_now_add=True, null=True)
+    completed = models.BooleanField(default=False)
+
+
+    def __str__(self):
+        
+        return self.name
+
+
     
