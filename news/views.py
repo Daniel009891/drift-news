@@ -2,9 +2,11 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.http import HttpResponseRedirect
 from django.views import generic, View
 from .models import Article, Comment
-from .forms import CommentForm
+from .forms import CommentForm, ContactForm
 from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
+
+
 
 
 def edit_comment(request, comment_id):
