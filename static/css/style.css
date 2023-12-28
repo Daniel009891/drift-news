@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@100&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
 
 
-.navbar-brand {
-    font-family: 'Exo', sans-serif;
-    font-family: 'Permanent Marker', cursive;
+.navbar-brand, .nav-item {
+    font-family: 'rubik glitch', sans-serif;
+    
 }
 
 span.helptext a {
     display: none;
+}
+
+.navbar-nav {
+    margin-right: 30px;
 }
 
 .sign_up {
@@ -33,5 +38,11 @@ input {
 
 .nav-link {
     font-size: 20px;
+}
+
+.jum-color {
+    background-color: darkgray;
+    text-align: center;
+    height: 400px;
 }
 

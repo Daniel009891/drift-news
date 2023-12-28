@@ -26,7 +26,7 @@ class Article(models.Model):
         return self.title
 
 
-# adapted code institute model from blog walkthrough project
+# adapted code institute model from blog walkthrough project for crud functionality
 
 class Comment(models.Model):
     commenter = models.ForeignKey(
@@ -42,7 +42,7 @@ class Comment(models.Model):
         ordering = ['created_on']
 
     def __str__(self):
-        return f"Comment {self.body} by {self.name}"
+        return f"Comment {self.body} by {self.commenter}"
 
 
 

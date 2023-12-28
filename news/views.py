@@ -9,20 +9,6 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 def contact_form(request):
 
-    # contact_form = ContactForm(data=request.POST)
-    # if request.method == 'POST':
-    #     if contact_form.is_valid():
-    #         contact_form.instance.name = request.name
-    #         email = request.Post.get('email')
-    #         subject = request.Post.get('subject')
-    #         enquiry = request.Post.get('enquiry')
-    #         contact.completed = False
-    #         contact_form.save()
-        #     messages.success(request,'Your enquiry has been submitted to admin successfully')
-        #     return HttpResponseRedirect('/contact')
-        # else:
-        #     messages.error(request, 'Error sending enquiry')
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -55,6 +41,7 @@ def edit_comment(request, comment_id):
 
     else:
         form = CommentForm(instance=comment)
+        messages.error(request, 'Error updating comment')
 
     template = 'comment_edit.html'
 
@@ -66,43 +53,18 @@ def edit_comment(request, comment_id):
     return render(request, template, context)
 
 
-# class CommentUpdateView(UpdateView):
-#     model = Comment
-#     template_name = 'comment_edit'
-
-#     def get(self, request, body, *args, **kwargs):
-
-#         comment = get_object_or_404(Comment, pk=pk)
-#         if request.method == 'POST':
-#             comment.body = request.POST.get('comment')
-#             if form.is_valid():
-#                 form.save()
-#                 return redirect('home')
-#         comment_form = CommentForm(instance=comment)
-#         context = {
-#             'comment_form': comment_form
-#         }
-
-#         return render(
-#             request,
-#             './comment_edit',
-#             context,
-#         )
-
-    # def get_success_url(self):
-    #     return reverse('article_detail', kwargs={'slug': self.object.article.slug})
-
-
 class CommentDeleteView(DeleteView):
     model = Comment
     template_name = 'comment_delete.html'
 
     def delete(self, request, *args, **kwargs):
         return super(CommentDeleteView, self).delete(request, *args, **kwargs)
+        messages.success(request,'Your comment has been deleted successfully')
+
 
     def get_success_url(self):
         return reverse('article_detail', kwargs={'slug': self.object.article.slug})
-        messages.success(request,'Your comment has been deleted successfully')
+        
 
 
 class ArticleList(generic.ListView):
@@ -145,8 +107,10 @@ class ArticleDetail(View):
             comment = comment_form.save(commit=False)
             comment.article = article
             comment.save()
+            messages.success(request,'Your comment has been sent to the admins for approval')
         else:
             comment_form = CommentForm()
+            # messages.error(request, 'Error posting comment')
 
         return render(
             request,
