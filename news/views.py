@@ -7,6 +7,24 @@ from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
 
 
+def contact_form(request):
+    form_class = ContactForm
+
+    form = form_class(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            name = request.Post
+            email = request.Post
+            subject = request.Post
+            enquiry = request.Post
+            contact.completed = False
+            form.save()
+            messages.success(request,'Your enquiry has been submitted to admin successfully')
+            return HttpResponseRedirect('/contact')
+        else:
+            messages.error(request, 'Error sending enquiry')
+
+    return render(request, 'contact.html', {'form': form})
 
 
 def edit_comment(request, comment_id):
