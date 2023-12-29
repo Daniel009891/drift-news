@@ -124,10 +124,17 @@ class ArticleDetail(View):
 
     """
     The detail view of the article elements and what is displayed to the user.
-    
+
     """
 
     def get(self, request, slug, *args, **kwargs):
+
+        """
+        Get request function for the data of the articles that have been
+        published. Gets the article objects by published status, filters
+        comments by approved and orders them oldest first.
+        
+        """
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
         comments = article.comments.filter(
@@ -146,6 +153,14 @@ class ArticleDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+
+        """
+        post request function for comments. Displays a comment form for the
+        user to fill in, if comment form is valid then the comment will be sent
+        to the admin for approval. A success message is then displayed to the
+        user. If form is not valid, user will be directed back to the comment
+        form.
+        """
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)
         comments = article.comments.filter(
