@@ -8,6 +8,38 @@ STATUS = ((0, "Draft"), (1, "Published"))
 # adapted code institute model from blog walkthrough project
 
 class Article(models.Model):
+
+    """
+    Model for the news articles and what data they require. The articles are set
+    to display with the most recently updated first, so users can see the newest
+    updates when scrolling
+
+    title = The title of the article
+
+    slug = Used in conjuction of the title to allow a unique primary key for
+    use later
+
+    author = The author of the article, if the author deletes the article it
+    will cascade delete any information associated with it
+
+    Updated_on = Gets the date time now of when the article was updated, this
+    will be used to show users when the article was updated.
+
+    content = The main body of the article
+
+    featured_image = The image displayed on the article and uploaded via the
+    admin panel
+
+    excerpt = a short extract from the article, this is not required but
+    optional
+
+    created_on = Gets the date time now of when the article was created.
+
+    status = Will be used to set the status of the article as published or not
+    published
+
+
+    """
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
     author = models.ForeignKey(
@@ -29,6 +61,23 @@ class Article(models.Model):
 # adapted code institute model from blog walkthrough project for crud functionality
 
 class Comment(models.Model):
+    """
+    Model for the creation of comments and what data they require. The ordering
+    is set to the oldest comment first, so this gives users the chance to
+    conversate easily.
+
+    commenter = 
+
+    article = 
+
+    email = 
+
+    body = 
+
+    created_on = 
+
+    approved = 
+    """
     commenter = models.ForeignKey(
         User, on_delete=models.CASCADE, null=False, related_name="comment_commenter")
     article = models.ForeignKey(
