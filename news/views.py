@@ -7,10 +7,9 @@ from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
 
 
-# For custom model
-
-
 def contact_form(request):
+
+    # For custom model
 
     """
     Function to request the associated data from the person submitting the
@@ -21,7 +20,6 @@ def contact_form(request):
     the user to fill out the required fields.
 
     """
-
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -38,10 +36,10 @@ def contact_form(request):
     return render(request, 'contact.html', context)
 
 
-# custom function for adapted comment model from blog walkthrough
-
-
 def edit_comment(request, comment_id):
+
+    # custom function for adapted comment model from blog walkthrough
+
     """
     Function to edit a comment that has been left by the user. It takes the
     arguments request and comment_id so it knows the comment that is to be
@@ -75,12 +73,11 @@ def edit_comment(request, comment_id):
     }
 
     return render(request, template, context)
-    
-
-# custom class for adapted comment model from blog walkthrough
 
 
 class CommentDeleteView(DeleteView):
+
+    # custom class for adapted comment model from blog walkthrough
 
     """
     Gets the model and template associated with comments. Incorporates djangos
@@ -108,6 +105,9 @@ class CommentDeleteView(DeleteView):
 
 
 class ArticleList(generic.ListView):
+
+    # From django blog walkthrough project# 
+
     """
     Details how the articles will be displayed, filtered by published so only
     published articles will be visible. Orders them by the created on date,
@@ -121,6 +121,8 @@ class ArticleList(generic.ListView):
 
 
 class ArticleDetail(View):
+
+    # From django blog walkthrough project adapted for this project
 
     """
     The detail view of the article elements and what is displayed to the user.
@@ -177,7 +179,6 @@ class ArticleDetail(View):
                              'admins for approval')
         else:
             comment_form = CommentForm()
-            
 
         return render(
             request,
