@@ -36,9 +36,9 @@ def edit_comment(request, comment_id):
             instance.article = Article.objects.get(id=comment.article.id)
             instance.commenter = request.user
             instance.save()
-            messages.success(request,'Your comment has been updated successfully')
+            messages.success(request, 'Your comment has been'
+                             'updated successfully')
             return redirect('article_detail', slug=comment.article.slug)
-        
 
     else:
         form = CommentForm(instance=comment)
@@ -60,12 +60,11 @@ class CommentDeleteView(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         return super(CommentDeleteView, self).delete(request, *args, **kwargs)
-        messages.success(request,'Your comment has been deleted successfully')
-
+        messages.success(request, 'Your comment has been deleted successfully')
 
     def get_success_url(self):
-        return reverse('article_detail', kwargs={'slug': self.object.article.slug})
-        
+        return reverse('article_detail',
+                       kwargs={'slug': self.object.article.slug})
 
 
 class ArticleList(generic.ListView):
@@ -108,7 +107,8 @@ class ArticleDetail(View):
             comment = comment_form.save(commit=False)
             comment.article = article
             comment.save()
-            messages.success(request,'Your comment has been sent to the admins for approval')
+            messages.success(request, 'Your comment has been sent to the'
+                             'admins for approval')
         else:
             comment_form = CommentForm()
             # messages.error(request, 'Error posting comment')

@@ -12,7 +12,7 @@ class Article(models.Model):
     """
     Model for the news articles and what data they require. The articles are
     set to display with the most recently updated first, so users can see the
-    newest updates when scrolling
+    newest updates first when scrolling
 
     title = The title of the article
 
