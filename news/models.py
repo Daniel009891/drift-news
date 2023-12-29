@@ -66,17 +66,20 @@ class Comment(models.Model):
     is set to the oldest comment first, so this gives users the chance to
     conversate easily.
 
-    commenter = 
+    commenter = Data of the user leaving the comment
 
-    article = 
+    article = The detail of the article the comment will be left on
 
-    email = 
+    email = Email of the user leaving the comment 
 
-    body = 
+    body = The main body of the comment, this will display when the comments
+    are approved.
 
-    created_on = 
+    created_on = Adate time now of when the comment was left, this allows the
+    comments to be filtered accordingly.
 
-    approved = 
+    approved = Boolean field used to set the comment as not approved when
+    submitted, admin approval required.
     """
     commenter = models.ForeignKey(
         User, on_delete=models.CASCADE, null=False, related_name="comment_commenter")
