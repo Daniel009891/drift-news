@@ -60,10 +60,12 @@ def edit_comment(request, comment_id):
             messages.success(request, 'Your comment has been'
                              'updated successfully')
             return redirect('article_detail', slug=comment.article.slug)
-
+        else:
+            return redirect('article_detail', slug=comment.article.slug)
+            messages.error(request, 'Error updating comment')
     else:
         form = CommentForm(instance=comment)
-        messages.error(request, 'Error updating comment')
+        
 
     template = 'comment_edit.html'
 
