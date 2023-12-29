@@ -106,7 +106,7 @@ class CommentDeleteView(DeleteView):
 
 class ArticleList(generic.ListView):
 
-    # From django blog walkthrough project# 
+    # From django blog walkthrough project
 
     """
     Details how the articles will be displayed, filtered by published so only
