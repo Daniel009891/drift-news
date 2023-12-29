@@ -7,6 +7,9 @@ from django.contrib import messages
 from django.views.generic.edit import UpdateView, DeleteView
 
 
+# For custom model
+
+
 def contact_form(request):
 
     """
@@ -33,6 +36,9 @@ def contact_form(request):
     context = {'form': form}
 
     return render(request, 'contact.html', context)
+
+
+# custom function for adapted comment model from blog walkthrough
 
 
 def edit_comment(request, comment_id):
@@ -69,6 +75,9 @@ def edit_comment(request, comment_id):
     }
 
     return render(request, template, context)
+    
+
+# custom class for adapted comment model from blog walkthrough
 
 
 class CommentDeleteView(DeleteView):
