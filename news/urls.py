@@ -10,5 +10,4 @@ urlpatterns = [
          views.CommentDeleteView.as_view(), name='comment_delete'),
     path('comment_edit/<int:comment_id>/', views.edit_comment,
          name='comment_edit'),
-    
 ]

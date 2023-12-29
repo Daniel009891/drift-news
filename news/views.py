@@ -18,7 +18,7 @@ def contact_form(request):
             return HttpResponseRedirect('/contact')
         else:
             messages.error(request, 'Error sending enquiry')
-            
+
     form = ContactForm()
     context = {'form': form}
 

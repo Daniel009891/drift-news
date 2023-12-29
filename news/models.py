@@ -71,7 +71,7 @@ class Comment(models.Model):
 
     article = The detail of the article the comment will be left on
 
-    email = Email of the user leaving the comment 
+    email = Email of the user leaving the comment
 
     body = The main body of the comment, this will display when the comments
     are approved.
@@ -112,4 +112,3 @@ class Contact(models.Model):
     def __str__(self):
 
         return self.name
-
