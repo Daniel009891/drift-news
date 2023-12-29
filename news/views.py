@@ -9,6 +9,14 @@ from django.views.generic.edit import UpdateView, DeleteView
 
 def contact_form(request):
 
+    """
+    Function to request the associated data from the person submitting the form.
+    Checks are carried out to ensure the form is valid and all fields required
+    are filled out. If this is the case the form will save to the database and 
+    send this to the admin for review.
+    
+    """
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
