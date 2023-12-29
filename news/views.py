@@ -10,11 +10,13 @@ from django.views.generic.edit import UpdateView, DeleteView
 def contact_form(request):
 
     """
-    Function to request the associated data from the person submitting the form.
-    Checks are carried out to ensure the form is valid and all fields required
-    are filled out. If this is the case the form will save to the database and 
-    send this to the admin for review.
-    
+    Function to request the associated data from the person submitting the
+    form. Checks are carried out to ensure the form is valid and all fields
+    required are filled out. If this is the case the form will save to the
+    database and sends this to the admin for review. Displays a message to the
+    user on success. If form is not valid the built in validator will prompt
+    the user to fill out the required fields.
+
     """
 
     if request.method == 'POST':
@@ -34,6 +36,13 @@ def contact_form(request):
 
 
 def edit_comment(request, comment_id):
+    """
+    Function to edit a comment that has been left by the user. It takes the
+    arguments request and comment_id so it knows the comment that is to be
+    edited. If the form is valid the users updated comment will save and update
+    automatically. The user is then redirected back to the corresponding
+    article. A success message is displayed to the user.
+    """
 
     comment = get_object_or_404(Comment, pk=comment_id)
 
