@@ -10,9 +10,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Article(models.Model):
 
     """
-    Model for the news articles and what data they require. The articles are set
-    to display with the most recently updated first, so users can see the newest
-    updates when scrolling
+    Model for the news articles and what data they require. The articles are
+    set to display with the most recently updated first, so users can see the
+    newest updates when scrolling
 
     title = The title of the article
 
@@ -58,7 +58,8 @@ class Article(models.Model):
         return self.title
 
 
-# adapted code institute model from blog walkthrough project for crud functionality
+# adapted code institute model from blog walkthrough project for crud
+# functionality
 
 class Comment(models.Model):
     """
@@ -82,7 +83,8 @@ class Comment(models.Model):
     submitted, admin approval required.
     """
     commenter = models.ForeignKey(
-        User, on_delete=models.CASCADE, null=False, related_name="comment_commenter")
+        User, on_delete=models.CASCADE,
+        null=False, related_name="comment_commenter")
     article = models.ForeignKey(
         Article, on_delete=models.CASCADE, related_name="comments")
     email = models.EmailField()
@@ -96,8 +98,6 @@ class Comment(models.Model):
     def __str__(self):
         return f"Comment {self.body} by {self.commenter}"
 
-
-
 # custom model for user to submit a contact form to the admin
 
 
@@ -108,7 +108,6 @@ class Contact(models.Model):
     enquiry = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True, null=True)
     completed = models.BooleanField(default=False)
-
 
     def __str__(self):
 

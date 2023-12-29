@@ -13,7 +13,8 @@ def contact_form(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request,'Your enquiry has been submitted to admin successfully')
+            messages.success(request, 'Your enquiry has been submitted to'
+                             'admin successfully')
             return HttpResponseRedirect('/contact')
         else:
             messages.error(request, 'Error sending enquiry')
