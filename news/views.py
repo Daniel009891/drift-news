@@ -108,6 +108,12 @@ class CommentDeleteView(DeleteView):
 
 
 class ArticleList(generic.ListView):
+    """
+    Details how the articles will be displayed, filtered by published so only
+    published articles will be visible. Orders them by the created on date,
+    newest articles first. Paginates the articles by 8 on each page.
+
+    """
     model = Article
     queryset = Article.objects.filter(status=1).order_by('-created_on')
     template_name = 'index.html'
@@ -115,6 +121,11 @@ class ArticleList(generic.ListView):
 
 
 class ArticleDetail(View):
+
+    """
+    The detail view of the article elements and what is displayed to the user.
+    
+    """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Article.objects.filter(status=1)
@@ -151,7 +162,7 @@ class ArticleDetail(View):
                              'admins for approval')
         else:
             comment_form = CommentForm()
-            # messages.error(request, 'Error posting comment')
+            
 
         return render(
             request,
