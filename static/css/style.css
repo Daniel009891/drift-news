@@ -5,6 +5,7 @@
 
  body {
     font-family: 'prompt', sans-serif;
+    background-color: silver;
 }
 
 .navbar-brand, .nav-item, footer {
@@ -57,3 +58,16 @@ input {
     padding-right: 20px;
 }
 
+.code-institute {
+    font-family: 'prompt', sans-serif;
+    color: #ffffff;
+}
+
+
+footer {
+    background-color: lightslategray;
+}
+
+.navbar {
+    background-color: lightslategray;
+}

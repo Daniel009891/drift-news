@@ -65,7 +65,6 @@ def edit_comment(request, comment_id):
             messages.error(request, 'Error updating comment')
     else:
         form = CommentForm(instance=comment)
-        
 
     template = 'comment_edit.html'
 
@@ -137,7 +136,7 @@ class ArticleDetail(View):
         Get request function for the data of the articles that have been
         published. Gets the article objects by published status, filters
         comments by approved and orders them oldest first.
-        
+
         """
         queryset = Article.objects.filter(status=1)
         article = get_object_or_404(queryset, slug=slug)

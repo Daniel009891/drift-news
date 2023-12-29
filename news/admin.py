@@ -30,5 +30,5 @@ class CommentAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_filter = ('completed', 'created_on')
     list_display = ('name', 'email', 'subject', 'created_on', 'completed')
-    search_fields = ['name', 'email',]
+    search_fields = ['name', 'email', ]
     actions = ['completed']
