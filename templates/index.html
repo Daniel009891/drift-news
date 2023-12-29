@@ -23,7 +23,8 @@
             {% if "placeholder" in article.featured_image.url %}
             <img class="card-img-top" src="#" />
             {% else %}
-            <img class="card-img-top" src=" {{ article.featured_image.url }}" />
+            <img class="card-img-top" src=" {{ article.featured_image.url }} " 
+            alt="article image" >
             {% endif %}
             <div class="image-flash">
               <p class="author">Author: {{ article.author }}</p>
@@ -44,6 +45,7 @@
       {% endif %} {% endfor %}
     </div>
   </div>
+</div>
 
   {% if is_paginated %}
   <nav aria-label="Page navigation">
