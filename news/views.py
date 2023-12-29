@@ -72,14 +72,28 @@ def edit_comment(request, comment_id):
 
 
 class CommentDeleteView(DeleteView):
+
+    """
+    Gets the model and template associated with comments. Incorporates djangos
+    deleteview.
+
+    """
     model = Comment
     template_name = 'comment_delete.html'
 
     def delete(self, request, *args, **kwargs):
+        """
+        Function to delete the users comment on the article it was origionally
+        left on. it incorporates the comment delete view and deletes the
+        comment. Displays a message to the user once successful.
+        """
         return super(CommentDeleteView, self).delete(request, *args, **kwargs)
         messages.success(request, 'Your comment has been deleted successfully')
 
     def get_success_url(self):
+        """
+        Function to get the success url after the comment has been deleted.
+        """
         return reverse('article_detail',
                        kwargs={'slug': self.object.article.slug})
 
