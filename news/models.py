@@ -102,6 +102,25 @@ class Comment(models.Model):
 
 
 class Contact(models.Model):
+
+    """
+    model for the creation of a contact form, the site user can submit an
+    enquiry to the admin. All fieds are required.
+
+    name = persons name submitting the form
+
+    email = persons email address submitting the form
+
+    subject = used to make a brief statement of the enquiry
+
+    enquiry = the bulk of the text, users can submit questions or request more
+    information
+
+    created_on = The date the form was submitted
+
+    completed = Used for the admin to tick when the enquiry has been completed
+
+    """
     name = models.CharField(max_length=80)
     email = models.EmailField()
     subject = models.CharField(max_length=60,)
