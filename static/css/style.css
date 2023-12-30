@@ -91,4 +91,13 @@ footer {
 
 .card-color {
     background-color: #f8f8f8;
+    
+}
+
+/* #card {
+    text-align: center;
+} */
+
+.inline {
+    display: inline;
 }

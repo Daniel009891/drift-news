@@ -64,7 +64,14 @@ Acceptance Criteria 1: I can leave a comment on the article and see it displayed
 
 Acceptance Criteria 2: I can edit or delete the comment if I choose to.
 
-![comments]()
+![comments](https://github.com/Daniel009891/drift-news/blob/main/docs/images/comments.png?raw=true)
+Once logged in users can leave a comment on the articles they wish. Once approved these comments will be available to edit or delete, but only by the origional commenter.
+
+<h3 id="two">As a Site User I can view a list of articles so that I can select one to read</h3>
+Acceptance Criteria 1: I can see a list of articles on the main page.
+Acceptance Criteria 2: I can click on the articles to find out more.
+
+![article list]()
 Once logged in users can leave a comment on the articles they wish. Once approved these comments will be available to edit or delete, but only by the origional commenter.
 
 <h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>

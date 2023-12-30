@@ -14,10 +14,10 @@
     </div>
 </div>
 <div class="container-fluid" id="card">
-  <div class="col-12 mt-3 left">
+  <div class="col-12 mt-3 left article-list">
     <div class="row">
       {% for article in article_list%}
-      <div class="col-md-4">
+      <div class="col-md-12 inline">
         <div class="card mb-4 card-color">
           <div class="image-container">
             {% if "placeholder" in article.featured_image.url %}
