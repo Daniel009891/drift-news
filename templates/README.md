@@ -4,7 +4,7 @@
 
 The go to site for all things drifting.
 
-![Image mockup of the website in a computer, tablet and phone]()
+![Image mockup of the website in a computer, tablet and phone](https://github.com/Daniel009891/drift-news/blob/main/docs/images/mockup.png?raw=true)
 
 ## Live Site
 
