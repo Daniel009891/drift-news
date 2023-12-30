@@ -81,8 +81,8 @@ Acceptance Criteria 1: I can click a button to read read the full article.
 
 Acceptance Criteria 2: I can easily read the information that i am interested in.
 
-![article detail top]()
-![article detail top]()
+![article detail top](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-detail-top.png?raw=true)
+![article detail top](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-detail-bottom.png?raw=true)
 Once the user has clicked read more, they will be redirected to the article detail page where they can read the full article.
 
 <h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
@@ -93,6 +93,13 @@ Acceptance Criteria 2: I can fill in the details of my company as company name a
 ![signup](https://github.com/Daniel009891/drift-news/blob/main/docs/images/sign-up.png)
 On the signup page, the user can sign up and add their own unique email , user name and password.
 
+<h3 id="eight">As a Site User I can fill out an enquiry form so that I can find out more about upcoming events.</h3>
+Acceptance Criteria 1:  I can fill out the form with my enquiry.
+
+Acceptance Criteria 2: I can submit my enquiry to the admins and have confirmation it has been sent.
+
+![contact form]()
+The user can click the dropdown menu on the navbar to allow them to find the contact form. The user will be greeted with a form that is required to be complete before allowing them to submit. Once the form is submitted a message is displayed to the user.
 
 ## Partner Stories Testing
 
