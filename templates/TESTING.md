@@ -98,24 +98,25 @@ Acceptance Criteria 1:  I can fill out the form with my enquiry.
 
 Acceptance Criteria 2: I can submit my enquiry to the admins and have confirmation it has been sent.
 
-![contact form]()
-The user can click the dropdown menu on the navbar to allow them to find the contact form. The user will be greeted with a form that is required to be complete before allowing them to submit. Once the form is submitted a message is displayed to the user.
-
-## Partner Stories Testing
-
-<h3 id="fourteen">
-
-![homepage]
-
-<h3 id="six">
-
-<h3 id="seven">
-
-
-
-<h3 id="eight">
+![contact nav](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-nav.png?raw=true)
+![contact nav dropdown](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-nav-dropdown.png?raw=true)
+The user can click the dropdown menu on the navbar to allow them to find the contact form.
+![contact form](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-form.png?raw=true)
+![contact form message](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-form-message.png?raw=true)
+The user will be greeted with a form that is required to be complete before allowing them to submit. Once the form is submitted a message is displayed to the user.
 
 <h2 id="admin-testing">Admin Stories Testing</h2>
+
+<h3 id="six">As a Site Admin I can create, read, update and delete articles so that I can manage my news content</h3>
+Acceptance Criteria 1: I can easily create articles with a form in the admin panel.
+
+Acceptance Criteria 2: I can update or delete the articles through the admin panel.
+
+![admin]()
+![admin]()
+![admin]()
+![admin]()
+
 
 <h3 id="nine">
 
