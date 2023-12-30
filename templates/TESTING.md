@@ -282,8 +282,8 @@ Chrome dev tools were used throughout the development of the project to test res
 
 <h3 id="browser-testing">Browser Testing</h3>
 
-
-
+* Safari
+* Edge
 
 <h2 id="validation">Validation</h2>
 
@@ -293,15 +293,18 @@ Chrome dev tools were used throughout the development of the project to test res
 
 ### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
+* 0 Errors
+* 3 Warnings
 
 
 ### [JSHint Javascript Validator](https://jshint.com/)
 
-
+* 0 Errors
+* 0 Warnings
 
 ### PEP8 Python Validator
 
-
+* 0 Errors on python documents created by myself, django python templates not verified.
 
 <h3 id="lighthouse">Lighthouse Testing</h3>
 
