@@ -14,9 +14,12 @@
 <li><a href="#navigation-bar">Navigation Bar</a></li>
 <li><a href="#footer">Footer</a></li>
 <li><a href="#homepage">Homepage</a></li>
-<li><a href="#signup">Signup Page</a></li>
+<li><a href="#register">Register Page</a></li>
 <li><a href="#login">Login Page</a></li>
-
+<li><a href="#article-detail">Article detail page</a></li>
+<li><a href="#comment-edit">Comment edit page</a></li>
+<li><a href="#comment-delete">Comment delete page</a></li>
+<li><a href="#contact-page">Contact page</a></li>
 <li><a href="#logout">Log out</a></li>
 <li><a href="#adminpanel">Admin panel</a></li>
 <li><a href="#authorization">Authorization</a></li>
@@ -190,29 +193,52 @@ and mark them as complete once to enquiry is satisfied.
 * User gets redirected to the right page after login.
 * Message of login confirmation being displayed and disappear as expected.
 
-<h3 id="new-request">New Request Customer</h3>
+<h3 id="article-detail">Article detail page</h3>
 
+* Comment form works as expected, success message displayed.
+* Users cannot submit an empty comment.
+* Images, text and subheadings displaying as expected.
+* Edit and delete buttons available to logged in users who origionally commented only.
+* message displays to non logged in users informing them log in to leave a comment as expected.
 
+<h3 id="comment-edit">Comment edit page</h3>
 
-<h3 id="request-overview">Request Overview</h3>
+* Form works as expected and submits correctly.
+* message displayed to user when updated.
+* back to homepage button works as expected.
+* user is redirected correctly when comment is updated.
 
+<h3 id="comment-delete">Comment delete page</h3>
 
+* all buttons work as expected.
+* on delete user is redirected as expected.
+* unable to get success message to show, unresolved bug.
 
-<h3 id="edit-request-customer">Edit Request Customer</h3>
+<h3 id="contact-page">Contact page</h3>
 
-
-
+* form validation works as expected.
+* back to homepage button works as expected.
+* form submits correctly and displays message to user.
+* user is not redirected, this is a design choice to allow users to submit a different enquiry without having to click back to the form.
 
 <h3 id="logout">Log out</h3>
 
-.
+* sign out button works as expected.
+* users are directed to an are you sure page as expected.
+* sing out button works fine and a message is displaying correctly.
 
 <h3 id="adminpanel">Admin panel</h3>
 
-
+* Admin can see a list of all articles.
+* Admin has access to all approved and pending comments.
+* Admin has access to all Users with details.
+* Admin can see all contact requests.
 
 <h3 id="authorization">Authorization</h3>
 
+* onnly origional commenters can edit or delete their comments.
+* django all auth handles signing in, out and registering of new users.
+* users must sign in to comment on articles, logic prevents not authorised users from doing so.
 
 
 <h3 id="responsivness">Responsivness</h3>
@@ -221,9 +247,15 @@ and mark them as complete once to enquiry is satisfied.
 
 <h3 id="browser-testing">Browser Testing</h3>
 
+Chrome dev tools were used throughout the development of the project to test responsiveness. Responsiveness was tested using Dev Tools to emulate the following devices.
 
+* Iphone 5
+* Iphone 6/7/8
+* Iphone 6/7/8 Plus
+* Iphone X
+* Ipad
+* Ipad Pro
 
----
 
 <h2 id="validation">Validation</h2>
 

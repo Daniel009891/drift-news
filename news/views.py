@@ -95,7 +95,6 @@ class CommentDeleteView(DeleteView):
         comment. Displays a message to the user once successful.
         """
         return super(CommentDeleteView, self).delete(request, *args, **kwargs)
-        messages.success(request, 'Your comment has been deleted successfully')
 
     def get_success_url(self):
         """
@@ -103,6 +102,7 @@ class CommentDeleteView(DeleteView):
         """
         return reverse('article_detail',
                        kwargs={'slug': self.object.article.slug})
+        messages.success(request, 'Your comment has been deleted successfully')
 
 
 class ArticleList(generic.ListView):
