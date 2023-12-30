@@ -27,9 +27,11 @@ span.helptext a {
     margin-right: 30px;
 }
 
-.sign_up {
-    background-color: rgba(211, 211, 211, 0.5);
+.sign-up {
+    background-color: #94c5cc9d;
     border-radius: 5px;
+    text-align:justify;
+    border: 2px solid;
 }
 
 button {
