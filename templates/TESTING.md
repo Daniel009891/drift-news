@@ -1,4 +1,4 @@
-[Back to README]()
+[Back to README](https://github.com/Daniel009891/drift-news/blob/main/templates/README.md)
 
 ---
 

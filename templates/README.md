@@ -35,7 +35,6 @@ The go to site for all things drifting.
 <li><a href="#edit-comment">Edit Request</a></li>
 <li><a href="#delete-comment">Delete Request</a></li>
 </ul>
-<li><a href="#database-design">Database Design</a></ul>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#deployment">Deployment</a></li>
 <li><a href="#technologies-used">Technologies</a></li>
@@ -63,7 +62,7 @@ Drift news targets anyone interested in the sport or motorsports in general, it 
 
 ![Detail](https://github.com/Daniel009891/drift-news/blob/main/docs/images/wireframe-detail.png?raw=true)
 
-### Detail Page
+### Contact Page
 
 ![contact](https://github.com/Daniel009891/drift-news/blob/main/docs/images/wireframe-contact.png?raw=true)
 
@@ -116,133 +115,250 @@ Its easy to login for returning user. Just fill in your username and password an
 
 ![login](https://github.com/Daniel009891/drift-news/blob/main/docs/images/login.png?raw=true)
 
-<h3 id="new-comment"></h3>
+<h3 id="new-comment">New Comment</h3>
 
 users can leave comments on articles after registering. it is rendered in a conversation style in descending order.
 
 ![new-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/comments.png?raw=true)
 
-<h3 id="edit-comment">Edit Request</h3>
+<h3 id="edit-comment">Edit Comment</h3>
 
 users also have the option to edit comments, through authentication they can only edit comments made by them.
 
 ![edit-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/edit-comment.png?raw=true)
 
-<h3 id="delete-comment">Delete Request</h3>
+<h3 id="delete-comment">Delete Comment</h3>
 
+Users can delete comments, but again this is done by authorisation.
 
-![delete-comment]()
+![delete-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/delete-comment.png?raw=true)
 
 ---
 
-<h2 id="database-design">Database Design</h2>
-On this project postgresql is used with ElephantSQL
-
-[Database Diagram](https://res.cloudinary.com/dpliee0fu/image/upload/v1669761371/Database_Planning_gzhnzg.pdf)
 
 ### Key Models
 
-### User
+### Article
 
-* The user profile is connected to the User model created by Allauth on registration.
-* The model is extended with AbstractUser to be able to save different user types with different permissions.
-* Primary Key is the id which is genereated automatically when a user is created.
+* The comments are related to the article model, this model is used for creating article on the page. It takes several primary keys for it to be able to supply data to the database.
+  
 
-### Order
+### Comment
 
-* The order model is related to the user model to see who is responsible for the order.
-* If the user is deleted, the order also gets deleted so no orders are active for users that don´t exist.
+* The Comment model is related to the Article model and allows the slug from the article to be used as a primary key to enable comments to be set to the correct article.
+* user id and date time now fields are displayed along with the comment body.
 
-### Candidate
+### Contact
 
-* Candidates are related to their managers (Users) who "create" the candidate.
-* Candidates are also related to the order in which managers present the candidate and link them together.
-* Being linked to the order, the user can also get access to the Candidate information via the template.
+* The contact model takes data from the registered/non registered user and is linked to the comment form, in turn this posts the data to the database.
 
 ---
 
 <h2 id="testing">Testing</h2>
 Link to the testing document.
 
-[TESTING.md]()
+[TESTING.md](https://github.com/Daniel009891/drift-news/blob/main/templates/TESTING.md)
 
 ---
 
-<h2 id="deployment">Deployment</h2>
+## **Deployment**
 
-The Code Institute student template was used to create this project.
+The master branch of this repository is the most current version and has been used for the deployed version of the site.
+
+The Code Institiue student template was used to create this project.
 
 [Code Institute Full Template](https://github.com/Code-Institute-Org/gitpod-full-template)
 
-* Click the "Use This Template" button.
+* Click the *Use This Template* button.
 * Give your repository a name, and description if you wish.
-* Click the Create Repository from Template to create your repository.
-* Click the Gitpod button to create a gitpod workspace, this can take a few minutes.
+* Click the *Create Repository from Template* to create your repository.
+* Click the *Gitpod* button to create a gitpod workspace, this can take a few minutes.
 * When working on project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one.
-* Use the following commands to commit your work,
-git add . - adds all modified files to a staging area.
+Use the following commands to commit your work,
+* `git add .` - adds all modified files to a staging area.
+* `git commit -m "A short message exlaining your commit"` - commits all changes to a local repository.
+* `git push` - pushes all your commited changes to your Github repository.
 
-git commit -m "A short message exlaining your commit" - commits all changes to a local repository.
+**Requirements**
 
-git push - pushes all your commited changes to your Github repository.
+* [Python 3](https://www.python.org/downloads/)
+* [Pip](https://pypi.org/project/pip/)
+* [Git](https://git-scm.com/)
+* [AWS S3](https://aws.amazon.com/)
 
-* Before making the first commit:
-PLEASE MAKE SURE NEVER TO PUBLISH SECRET KEYS, ADD THE env.py TO A .gitignore TO AVOID PUSHING KEYS TO GITHUB.
+**Creating a Clone**
 
-### Heroku Deployment
+1. From the repository, click *Code*
+2. In the *Clone >> HTTPS* section, copy the clone URL for the repository
+3. In your local IDE open Git Bash
+4. Change the current working directory to the location where you want the cloned directory to be made
+5. Type `git clone`, and then paste the URL you copied in Step 2 - ``git clone https://github.com/Harry-Leepz/Nourish-and-Lift.git``
+6. Set the following values in a `env.py` file.
+
+```
+import os
+
+os.environ.setdefault("SECRET_KEY", "<app secret key of your choice>")
+os.environ.setdefault("DEVELOPMENT", "True")
+os.environ.setdefault('STRIPE_PUBLIC_KEY', '<key generated by Stripe>')
+os.environ.setdefault('STRIPE_SECRET_KEY', '<key generated by Stripe>')
+os.environ.setdefault('STRIPE_WH_SECRET', '<key generated by Stripe>')
+```
+
+* Stripe keys are generated by Stripe, each individual have their own unique key values.
+* *PLEASE MAKE SURE NEVER TO PUBLISH THESE KEYS, ADD THE `env.py` TO A `.gitignore` TO AVOID PUSHING KEYS TO GITHUB.*
+
+7. Install the project requirements - `pip3 install requirements.txt`
+8. Apply database migrations - `python manage.py migrate`
+9. Create a superuser - `python manage.py createsuperuser`
+10. The project can be run with the following - `python manage.py runserver`
+
+**Heroku Deployment**
 
 1. Log into Heroku
 2. Create a new app, choose a location closest to you
 3. Search for Heroku Postgres from the resources tab and add to your project
-4. Make sure to have dj_database_url and psycopg2 installed.
+4. Make sure to have `dj_database_url` and `psycopg2` installed.
 
+```
 pip3 install dj_database_url
 pip3 install psycopg2
+```
 
-5. Login to the Heroku CLI - heroku login -i
-6. Run migrations on Heroku Postgres - heroku run python manage.py migrate
-7. Create a superuser - python manage.py createsuperuser
-8. Install gunicorn - pip3 install gunicorn
-9. Create a requirements.txt file - pip3 freeze > requirements.txt
-10. Create a Procfile (note the capital P), and add the following,
+5. Login to the Heroku CLI - `heroku login -i`
+6. Run migrations on Heroku Postgres - `heroku run python manage.py migrate`
+7. Create a superuser - `python manage.py createsuperuser`
+8. Install `gunicorn` - `pip3 install gunicorn`
+9. Create a requirements.txt file - `pip3 freeze > requirements.txt`
+10. Create a `Procfile` (note the capital P), and add the following,
 
-web: gunicorn jobin.wsgi
+```
+web: gunicorn moose_juice.wsgi:application
+```
 
-11. Disable Heroku from collecting static files
-
-heroku config:set DISABLE_COLLECTSTATIC=1 --app jobin-compare-consultants
-
+11. Disable Heroku from collecting static files - `heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>`
 12. Add the hostname to project settings.py file
 
-ALLOWED_HOSTS = ['jobin-compare-consultants.herokuapp.com', 'localhost']
+```
+ALLOWED_HOSTS = ['<you-app-name>.herokuapp.com', 'localhost']
 
-13. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing
+```
 
-connect
+13. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing `connect`
+14. In Heroku, within settings, under config vars select `Reveal config vars`
+15. Add the following,
 
-14. In Heroku, within settings, under config vars select
+```
+AWS_ACCESS_KEY_ID =	<your variable here>
+AWS_SECRET_ACCESS_KEY =	<your variable here>
+DATABASE_URL =	<added by Heroku when Postgres installed>
+DISABLE_COLLECTSTATIC =	1 
+EMAIL_HOST_PASS = <your variable here>
+EMAIL_HOST_USER = <your variable here>
+SECRET_KEY = <your variable here>
+STRIPE_PUBLIC_KEY = <your variable here>
+STRIPE_SECRET_KEY = <your variable here>
+STRIPE_WH_SECRET = <different from env.py>
+USE_AWS = True
+```
 
-Reveal config vars
+16. Go back to the Deploy tab and under Automatic deploys choose `Enable Automatic Deploys`
+17. Back in your CLI add, commit and push your changes and Heroku will automatically deploy your app
 
-15. Add the following
-
-DATABASE_URL = URL to the database
-CLOUDINARY_URL = URL to cloudinary
-SECRET_KEY = The secret key
-
-16. Commit and push in your CLI
-
+```
 git add .
 git commit -m "Initial commit"
 git push
+```
 
-17. Go back to the Deploy tab and press
+18. Your deployed site can be launched by clicking `Open App` from its page within Heroku.
 
-Deploy Branch
+**AWS S3 Bucket setup**
 
-18. Your deployed site can be launched by clicking Open App from its page within Heroku.
+1. Create an Amazon AWS account
+2. Search for S3 and create a new bucket
+    * Allow public access
+3. Under Properties > Static website hosting
+    * Enable
+    * index.html as index.html
+    * save
+4. Under Permissions > CORS use the following:
 
-*During production Heroku Postgresql was no longer availible and therefore DATABASE_URL in Heroku Config Vars was changed to the ElephantSQL Postgres url.*
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+
+5. Under Permissions > Bucket Policy:
+    * Generate Bucket Policy and take note of Bucket ARN
+    * Chose S3 Bucket Policy as Type of Policy
+    * For Principal, enter *
+    * Enter ARN noted above
+    * Add Statement
+    * Generate Policy
+    * Copy Policy JSON Document
+    * Paste policy into Edit Bucket policy on the previous tab
+    * Save changes
+6. Under Access Control List (ACL):
+    * For Everyone (public access), tick List
+    * Accept that everyone in the world may access the Bucket
+    * Save changes
+
+**AWS IAM (Identity and Access Management) setup**
+
+1. From the IAM dashboard within AWS, select User Groups:
+    * Create a new group
+    * Click through and Create Group
+2. Select Policies:
+    * Create policy
+    * Under JSON tab, click Import managed policy
+    * Choose AmazongS3FullAccess
+    * Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+    * Click next step and go to Review policy
+    * Give the policy a name and description of your choice
+    * Create policy
+3. Go back to User Groups and choose the group created earlier
+    * Under Permissions > Add permissions, choose Attach Policies and select the one just created
+    * Add permissions
+4. Under Users:
+    * Choose a user name
+    * Select Programmatic access as the Access type
+    * Click Next
+    * Add the user to the Group just created
+    * Click Next and Create User
+5. Download the `.csv` containing the access key and secret access key.
+    * **THE `.csv` FILE IS ONLY AVAILABLE ONCE AND CANNOT BE DOWNLOADED AGAIN.**
+
+**Connecting Heroku to AWS S3**
+
+1. Install boto3 and django-storages
+
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+
+2. Add the values from the `.csv` you downloaded to your Heroku Config Vars under Settings:
+3. Delete the `DISABLE_COLLECTSTATIC` variable from your Cvars and deploy your Heroku app
+4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+    * **PLEASE MAKE SURE `media` AND `static` FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS**
+
+---
+
+## **Credits**
 
 ---
 
@@ -257,15 +373,10 @@ Deploy Branch
 * [Bootstrap](https://getbootstrap.com/)
 * [Heroku](https://id.heroku.com/login)
 * [Cloudinary](https://cloudinary.com/)
-* [Github](https://github.com/)
-* [Gitpod](https://www.gitpod.io/)
-* [Balsamiq](https://balsamiq.com/)
-* [SimpleImageResizer](https://www.simpleimageresizer.com/)
-* [Pagespeed](https://pagespeed.web.dev/)
-* [Miniwebtool](https://miniwebtool.com/django-secret-key-generator/)
-* [Techsini](https://techsini.com/multi-mockup/index.php)
+* [Github](https://codeanywhere.com/)
+* [codeanywhere](https://www.gitpod.io/)
 * [Pexels](https://www.pexels.com)
-* [Writer](https://writer.com/grammar-checker/)
+
 
 ---
 
@@ -275,7 +386,7 @@ Deploy Branch
 
 * To help me get started with the project and understand the basics, i followed [Code Institute](https://codeinstitute.net/se/) and Matt´s Walktrough on "I Think therefore i Blog", big thanks for getting me started.
 
-* Ed, Ger and Oisin, Tutors at [Code Institute](https://codeinstitute.net/se/) helped me solve some bugs in my code, big thanks.
+* Sean Tutor at [Code Institute](https://codeinstitute.net/se/) helped me solve some bugs in my code, big thanks.
 
 #### Bootstrap
 
@@ -287,13 +398,12 @@ Deploy Branch
 
 #### Issues with code
 
-Most of the daily problems were solved thanks to [Stackoverflow](https://stackoverflow.com/) and [W3Schools](https://www.w3schools.com/).
+Most of the daily problems were solved thanks to [Stackoverflow](https://stackoverflow.com/)  [W3Schools](https://www.w3schools.com/) and ![slack](https://slack.com/intl/en-gb).
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-This website was completed as a Portfolio Project 4 for the Fullstack Diploma at [Code Institute](https://codeinstitute.net/se/). I want to thank my friend **Manne** for helping me understand some javascript functions.
+This website was completed as a Portfolio Project 4 for the Fullstack Diploma at [Code Institute](https://codeinstitute.net/se/). I want to thank my mentor **Harry** for helping me through this tough project.
 
 The project is for educational purposes only and not for public consumption.
 
-William Tynér, November 2022.
-[LinkedIn](https://www.linkedin.com/in/williamtyner/)
+
