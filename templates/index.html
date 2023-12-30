@@ -21,9 +21,9 @@
         <div class="card mb-4">
           <div class="image-container">
             {% if "placeholder" in article.featured_image.url %}
-            <img class="card-img-top" src="#" />
+            <img class="card-img-top" src="../media/images/placeholder" />
             {% else %}
-            <img class="card-img-top" src=" {{ article.featured_image.url }} " 
+            <img class="card-img-top" src="{{ article.featured_image.url }}" 
             alt="article image" >
             {% endif %}
             <div class="image-flash">
