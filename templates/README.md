@@ -8,7 +8,7 @@ The go to site for all things drifting.
 
 ## Live Site
 
-[Go to application]()
+[Go to application](https://walltap-229162c12b90.herokuapp.com/)
 
 ## Repository
 
@@ -49,23 +49,13 @@ The go to site for all things drifting.
 ---
 
 <h2 id="target-group">Target Group</h2>
-Jobin Application has two target groups, customers, and partners.
-By focusing marketing on customers, we are confident that we will attract many partners to our application. Consulting companies are always looking for new business opportunities and those opportunities are with us when customers post requests in our application.
 
-### Customers
+Drift news targets anyone interested in the sport or motorsports in general, it is a good source of information for the community.
 
-The consultant industry has annual turnover of trillions of dollars worldwide. Companies in almost every country in the world are spending money on consulting hours, many of them with low satisfaction. Jobin is an application for the thousands of companies that want to find the absolute best quality of the consultants they invest in, by comparing their options before making a decision.
-
-### Partners
-
-In Sweden, two new consulting companies are registered a week (statistics from 2021). There have never been so many companies fighting for the same customers. With our application, our partners can focus on their core business, hiring quality consultants, instead of having to spend time selling their services to clients. Whoever has the best consultant gets to deliver
 
 ---
 
 <h2 id="user-experince">UXD - User Experince Design</h2>
-To better understand the customer journey i made a story about how a customer journey could look.
-
-For base of the project i´ve made wireframes based on the user stories and the flowchart of customer/partner.
 
 <h3 id="wireframe">Wireframes</h3>
 
