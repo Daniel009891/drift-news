@@ -56,16 +56,16 @@
 <li><a href="#nine">As a Site Admin I can read enquiry forms sent in so that I can take on board suggestions and issues</a></li>
 
 </ul>
----
+
 
 ## User Stories Testing
 
-<<h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
+<h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
 Acceptance Criteria 1: I can choose my own username.
 
 Acceptance Criteria 2: I can fill in the details of my company as company name and vat number.
 
-![signup](./docs/images/testing/ign-up.png)
+![https://github.com/Daniel009891/drift-news/blob/main/docs/images/sign-up.png?raw=true]
 On the signup page, the user can sign up and add their own unique email , user name and password.
 
 
