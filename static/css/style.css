@@ -16,7 +16,7 @@
 
 .top-jumbatron {
     background-color:#94c5cc9d;
-    height: 400px;
+    height: 600px;
 }
 
 span.helptext a {
@@ -92,4 +92,12 @@ footer {
 
 .inline {
     display: inline;
+}
+
+/* For small screen sizes from 350px wide and down */
+
+@media screen and (max-width: 350px) {
+    .fa-flag-checkered {
+        display: none;
+    }
 }

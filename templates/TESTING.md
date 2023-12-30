@@ -68,13 +68,16 @@ Acceptance Criteria 1: I can leave a comment on the article and see it displayed
 Acceptance Criteria 2: I can edit or delete the comment if I choose to.
 
 ![comments](https://github.com/Daniel009891/drift-news/blob/main/docs/images/comments.png?raw=true)
+
 Once logged in users can leave a comment on the articles they wish. Once approved these comments will be available to edit or delete, but only by the origional commenter.
 
 <h3 id="two">As a Site User I can view a list of articles so that I can select one to read</h3>
 Acceptance Criteria 1: I can see a list of articles on the main page.
+
 Acceptance Criteria 2: I can click on the articles to find out more.
 
 ![article list](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-list.png?raw=true)
+
 Users can scroll the homepage to see the list of articles, there is a read more button to view the entire article.
 
 As a Site User I can click on an article so that I can read the full text
@@ -86,6 +89,7 @@ Acceptance Criteria 2: I can easily read the information that i am interested in
 
 ![article detail top](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-detail-top.png?raw=true)
 ![article detail top](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-detail-bottom.png?raw=true)
+
 Once the user has clicked read more, they will be redirected to the article detail page where they can read the full article.
 
 <h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
@@ -94,6 +98,7 @@ Acceptance Criteria 1: I can choose my own username.
 Acceptance Criteria 2: I can fill in the details of my company as company name and vat number.
 
 ![signup](https://github.com/Daniel009891/drift-news/blob/main/docs/images/sign-up.png)
+
 On the signup page, the user can sign up and add their own unique email , user name and password.
 
 <h3 id="eight">As a Site User I can fill out an enquiry form so that I can find out more about upcoming events.</h3>
@@ -102,10 +107,15 @@ Acceptance Criteria 1:  I can fill out the form with my enquiry.
 Acceptance Criteria 2: I can submit my enquiry to the admins and have confirmation it has been sent.
 
 ![contact nav](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-nav.png?raw=true)
+
 ![contact nav dropdown](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-nav-dropdown.png?raw=true)
+
 The user can click the dropdown menu on the navbar to allow them to find the contact form.
+
 ![contact form](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-form.png?raw=true)
+
 ![contact form message](https://github.com/Daniel009891/drift-news/blob/main/docs/images/contact-form-message.png?raw=true)
+
 The user will be greeted with a form that is required to be complete before allowing them to submit. Once the form is submitted a message is displayed to the user.
 
 <h2 id="admin-testing">Admin Stories Testing</h2>
@@ -116,26 +126,39 @@ Acceptance Criteria 1: I can easily create articles with a form in the admin pan
 Acceptance Criteria 2: I can update or delete the articles through the admin panel.
 
 ![admin create](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-create.png?raw=true)
+
 Admins will have the ability to update the articles
+
 ![admin Delete](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-delete.png?raw=true)
+
 delete the articles
+
 ![admin list](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-list.png?raw=true)
 view a list of articles awaiting publishing or published
 ![admin update](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-update.png?raw=true)
+
 and update existing articles. All through the built in django admin panel.
 
 <h3 id="seven">As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</h3>
 Acceptance Criteria
 Acceptance Criteria 1: I can view all comments awaiting approval.
 
-Acceptance Criteria 2: I can approve comments if suitable or deny comments if they are not.
+Acceptance Criteria 2: I can approve comments if suitable or deny comments if they are not
+.
 ![admin comment list ](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-list.png?raw=true)
+
 The admin can view a list of comments approved/awaiting approval
+
 ![admin Delete comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-list-delete.png?raw=true)
+
 Delete any comment they see fit
+
 ![admin approve comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-approve.png?raw=true)
+
 and also approve suitable comments.
+
 ![admin approve comment success](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-approve-success.png?raw=true)
+
 Once a comment is approved a success message is displayed.
 
 <h3 id="nine">As a Site Admin I can read enquiry forms sent in so that I can take on board suggestions and issues</h3>
@@ -145,10 +168,15 @@ Acceptance Criteria 1: I can view contact form in the admin panel and mark it as
 Acceptance Criteria 2: I have the relevant information needed if an email reply is necessary.
 
 ![admin contact list ](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-list.png?raw=true)
+
 The admin user can view a list of contact requests
+
 ![admin contact form information](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-review.png?raw=true)
+
 open them to view the individual contact enquiries to view the information
+
 ![admin contact complete](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-complete.png?raw=true)
+
 and mark them as complete once to enquiry is satisfied.
 
 <hr>
@@ -243,10 +271,6 @@ and mark them as complete once to enquiry is satisfied.
 
 <h3 id="responsivness">Responsivness</h3>
 
-
-
-<h3 id="browser-testing">Browser Testing</h3>
-
 Chrome dev tools were used throughout the development of the project to test responsiveness. Responsiveness was tested using Dev Tools to emulate the following devices.
 
 * Iphone 5
@@ -255,6 +279,10 @@ Chrome dev tools were used throughout the development of the project to test res
 * Iphone X
 * Ipad
 * Ipad Pro
+
+<h3 id="browser-testing">Browser Testing</h3>
+
+
 
 
 <h2 id="validation">Validation</h2>
