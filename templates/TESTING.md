@@ -71,8 +71,19 @@ Once logged in users can leave a comment on the articles they wish. Once approve
 Acceptance Criteria 1: I can see a list of articles on the main page.
 Acceptance Criteria 2: I can click on the articles to find out more.
 
-![article list]()
-Once logged in users can leave a comment on the articles they wish. Once approved these comments will be available to edit or delete, but only by the origional commenter.
+![article list](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-list.png?raw=true)
+Users can scroll the homepage to see the list of articles, there is a read more button to view the entire article.
+
+As a Site User I can click on an article so that I can read the full text
+
+<h3 id="three">As a Site User I can click on an article so that I can read the full text</h3>
+Acceptance Criteria 1: I can click a button to read read the full article.
+
+Acceptance Criteria 2: I can easily read the information that i am interested in.
+
+![article detail top]()
+![article detail top]()
+Once the user has clicked read more, they will be redirected to the article detail page where they can read the full article.
 
 <h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
 Acceptance Criteria 1: I can choose my own username.
