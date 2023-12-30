@@ -310,19 +310,23 @@ Chrome dev tools were used throughout the development of the project to test res
 
 #### On desktop for homepage
 
-![lighthouse1]()
+![lighthouse1](https://github.com/Daniel009891/drift-news/blob/main/docs/images/lighthouse-desktop.png?raw=true)
 
 #### On mobile for homepage
 
-![lighthouse1]()
+![lighthouse1](https://github.com/Daniel009891/drift-news/blob/main/docs/images/lighthouse-mobile.png?raw=true)
 
 ---
 
 <h2 id="bugs">Bugs</h2>
 
+* messages force the jumbatron down when displaying on the page
+* unable to get success message working when user deletes comments
 
 
 <h3 id="solved-bugs">Solved Bugs</h3>
 
+* solved bugs due to templates not rendering, this was due to urls.py not being set correctly.
+* solved a bug where flag favicon was squished to the side on mobile view, added media query to get rid of this.
 
 ---
