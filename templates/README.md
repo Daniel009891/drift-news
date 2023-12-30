@@ -59,28 +59,36 @@ Drift news targets anyone interested in the sport or motorsports in general, it 
 
 <h3 id="wireframe">Wireframes</h3>
 
-![frontpage]()
+### Front Page
 
-![Detail]()
+![frontpage](https://github.com/Daniel009891/drift-news/blob/main/docs/images/wireframe-landing.png?raw=true)
 
-![contact]()
+### Detail Page
 
+![Detail](https://github.com/Daniel009891/drift-news/blob/main/docs/images/wireframe-detail.png?raw=true)
 
+### Detail Page
 
-
+![contact](https://github.com/Daniel009891/drift-news/blob/main/docs/images/wireframe-contact.png?raw=true)
 
 ---
 
 <h2 id="user-stories">User Stories</h2>
 
-
-
----
+* As a Site User I can comment on news articles I find interesting so that I can interact with like minded users
+* As a Site User I can view a list of articles so that I can select one to read
+* As a Site User I can click on an article so that I can read the full text
+* As a Site User I can register an account so that I can comment on articles
+* As a Site Admin I can create, read, update and delete articles so that I can manage my news content
+* As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
+* As a Site User I can fill out an enquiry form so that I can find out more about upcoming events.
+* As a Site Admin I can read enquiry forms sent in so that I can take on board suggestions and issues
 
 <h2 id="surface-plan">The Surface Plane</h2>
 
 <h3 id="base">Base</h3>
 
+To make the application as dynamic as possible, i want the navbar and footer to be the same in all of the application. Therefore, Django dynamic pages are used so the user always recognizes the default layout they're on.
 
 Navbar
 ![navbar]()
