@@ -126,21 +126,26 @@ Acceptance Criteria
 Acceptance Criteria 1: I can view all comments awaiting approval.
 
 Acceptance Criteria 2: I can approve comments if suitable or deny comments if they are not.
-![admin create]()
-Admins will have the ability to update the articles
-![admin Delete]()
-delete the articles
-![admin list]()
-view a list of articles awaiting publishing or published
-![admin update]()
+![admin comment list ](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-list.png?raw=true)
+The admin can view a list of comments approved/awaiting approval
+![admin Delete comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-list-delete.png?raw=true)
+Delete any comment they see fit
+![admin approve comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-approve.png?raw=true)
+and also approve suitable comments.
+![admin approve comment success](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-comments-approve-success.png?raw=true)
+Once a comment is approved a success message is displayed.
 
-<h3 id="ten">
+<h3 id="nine">As a Site Admin I can read enquiry forms sent in so that I can take on board suggestions and issues</h3>
+Acceptance Criteria
+Acceptance Criteria 1: I can view contact form in the admin panel and mark it as complete.
 
+Acceptance Criteria 2: I have the relevant information needed if an email reply is necessary.
 
+![admin contact list ]()
 
+![admin contact form information]()
 
-
----
+<hr>
 
 <h2 id="manual-testing">Manual Testing</h2>
 
