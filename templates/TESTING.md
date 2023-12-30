@@ -112,17 +112,31 @@ Acceptance Criteria 1: I can easily create articles with a form in the admin pan
 
 Acceptance Criteria 2: I can update or delete the articles through the admin panel.
 
-![admin]()
-![admin]()
-![admin]()
-![admin]()
+![admin create](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-create.png?raw=true)
+Admins will have the ability to update the articles
+![admin Delete](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-delete.png?raw=true)
+delete the articles
+![admin list](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-list.png?raw=true)
+view a list of articles awaiting publishing or published
+![admin update](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-update.png?raw=true)
+and update existing articles. All through the built in django admin panel.
 
+<h3 id="seven">As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</h3>
+Acceptance Criteria
+Acceptance Criteria 1: I can view all comments awaiting approval.
 
-<h3 id="nine">
+Acceptance Criteria 2: I can approve comments if suitable or deny comments if they are not.
+![admin create]()
+Admins will have the ability to update the articles
+![admin Delete]()
+delete the articles
+![admin list]()
+view a list of articles awaiting publishing or published
+![admin update]()
 
 <h3 id="ten">
 
-## User Stories (could) that are not done
+
 
 
 
