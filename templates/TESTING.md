@@ -65,7 +65,7 @@ Acceptance Criteria 1: I can choose my own username.
 
 Acceptance Criteria 2: I can fill in the details of my company as company name and vat number.
 
-![signup](/workspaces/drift-news/docs/images/sign-up.png)
+![signup](docs/images/sign-up.png)
 On the signup page, the user can sign up and add their own unique email , user name and password.
 
 
