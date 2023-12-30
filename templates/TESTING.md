@@ -176,13 +176,19 @@ and mark them as complete once to enquiry is satisfied.
 * Good contrast between text/images/buttons.
 
 
-<h3 id="signup">Signup page</h3>
+<h3 id="register">Register page</h3>
 
-
+* Username, and password are required as expected.
+* Email address is optional.
+* login link works and redirects existing users to log in page.
+* User get redirected to the home page after successfully signing up, a success message appears to the user.
+* Messages to user disappear after 2.5 seconds as expected.
 
 <h3 id="login">Login page</h3>
 
-
+* Form works as expected with username and password.
+* User gets redirected to the right page after login.
+* Message of login confirmation being displayed and disappear as expected.
 
 <h3 id="new-request">New Request Customer</h3>
 
