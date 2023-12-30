@@ -31,13 +31,9 @@ The go to site for all things drifting.
 <li><a href="#homepage">Homepage</a></li>
 <li><a href="#signup">Signup</a></li>
 <li><a href="#login">Login</a></li>
-<li><a href="#customer-overview">Customer Overview</a></li>
-<li><a href="#new-request">New Request</a></li>
-<li><a href="#edit-request">Edit Request</a></li>
-<li><a href="#delete-request">Delete Request</a></li>
-<li><a href="#send-candidates">Send Candidates</a></ul>
-<li><a href="#see-candidates">See Candidates</a></li>
-<li><a href="#partner-overview">Partner Overview</a></li>
+<li><a href="#new-comment">New Request</a></li>
+<li><a href="#edit-comment">Edit Request</a></li>
+<li><a href="#delete-comment">Delete Request</a></li>
 </ul>
 <li><a href="#database-design">Database Design</a></ul>
 <li><a href="#testing">Testing</a></li>
@@ -94,41 +90,38 @@ Navbar
 ![navbar](https://github.com/Daniel009891/drift-news/blob/main/docs/images/nav-bar.png?raw=true)
 
 Footer
-![footer]()
+![footer](https://github.com/Daniel009891/drift-news/blob/main/docs/images/footer.png?raw=true)
 
 <h3 id="homepage">Homepage</h3>
 
 A big goal is to highlight the advantages as early as possible so the user gets sold on why they should register and use our application.
 
 
-![jumbatron]()
+![jumbatron](https://github.com/Daniel009891/drift-news/blob/main/docs/images/front-page-jumbatron.png?raw=true)
 
 Articles are displayed in an ordered fashion with big images to catch the users attention.
 
 ![articles](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-list.png?raw=true)
 
 
-
-![quote]()
-
-
-
 <h3 id="signup">Signup</h3>
 
+The user is can sign up for an account using this page to allow them to comment on articles
 
-![signup]()
+![signup](https://github.com/Daniel009891/drift-news/blob/main/docs/images/sign-up.png?raw=true)
 
 <h3 id="login">Login</h3>
+
 Its easy to login for returning user. Just fill in your username and password and you get logged in.
 
 ![login]()
 
 
 
-<h3 id="new-request"></h3>
+<h3 id="new-commentt"></h3>
 
 
-![new-request]()
+![new-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/comments.png?raw=true)
 
 <h3 id="edit-request">Edit Request</h3>
 
