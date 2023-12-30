@@ -59,6 +59,13 @@
 
 
 ## User Stories Testing
+<h3 id="one">As a Site User I can comment on news articles I find interesting so that I can interact with like minded users</h3>
+Acceptance Criteria 1: I can leave a comment on the article and see it displayed once approved.
+
+Acceptance Criteria 2: I can edit or delete the comment if I choose to.
+
+![comments]()
+Once logged in users can leave a comment on the articles they wish. Once approved these comments will be available to edit or delete, but only by the origional commenter.
 
 <h3 id="five">As a Site User I can register an account so that I can comment on articles</h3>
 Acceptance Criteria 1: I can choose my own username.
