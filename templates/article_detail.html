@@ -11,12 +11,12 @@
           {{ article.author }} | {{ article.created_on }}
         </p>
       </div>
-      <div class="d-none d-md-block col-md-6 masthead-image">
+      <div class="d-none d-md-block col-md-12 masthead-image">
         <!-- The featured image URL goes in the src attribute -->
         {% if "placeholder" in article.featured_image.url %}
         <img src="/media/images/placeholder-image.png" width="" />
         {% else %}
-        <img src=" {{ article.featured_image.url }}" width= "300" alt="article image" />
+        <img src=" {{ article.featured_image.url }}" class="article-image" alt="article image" />
         {% endif %}
       </div>
     </div>
@@ -51,7 +51,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-8 card mb-4 mt-3">
+    <div class="col-md-8 card mb-4 mt-3 card-color">
       <h3>Comments:</h3>
       <div class="card-body">
         <!-- We want a for loop inside the empty control tags to iterate through each comment in comments -->
@@ -67,7 +67,8 @@
             wrote:
           </p>
           <!-- The body of the comment goes before the | -->
-          {{ comment.body | linebreaks }} 
+          {{ comment.body | linebreaks }}
+          <hr> 
         {% if request.user == comment.commenter %}
         <span>
             <a href="{% url 'comment_delete' comment.id %}" class="btn btn-outline-danger btn-sm">

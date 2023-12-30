@@ -40,15 +40,22 @@
 
 <h2 id="user-stories">User Stories Testing</h2>
 
-
-
-
-
-
+<h3 id="site-user-stories">Site User Stories Testing</h3>
+<ul>
+<li><a href="#one">As a Site User I can comment on news articles I find interesting so that I can interact with like minded users</a></li>
+<li><a href="#two">As a Site User I can view a list of articles so that I can select one to read</a></li>
+<li><a href="#three">As a Site User I can click on an article so that I can read the full text</a></li>
+<li><a href="#five">As a Site User I can register an account so that I can comment on articles</a></li>
+<li><a href="#eight">As a Site User I can fill out an enquiry form so that I can find out more about upcoming events.</a></li>
+</ul>
 
 <h3 id="#admin-testing">Admin Testing</h3>
+<ul>
+<li><a href="#six">As a Site Admin I can create, read, update and delete articles so that I can manage my news content</a></li>
+<li><a href="#seven">As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments</a></li>
+<li><a href="#nine">As a Site Admin I can read enquiry forms sent in so that I can take on board suggestions and issues</a></li>
 
-
+</ul>
 ---
 
 ## User/Customer Stories Testing

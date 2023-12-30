@@ -5,7 +5,8 @@
 
  body {
     font-family: 'prompt', sans-serif;
-    background-color: silver;
+    background-color: #b4d2e77a;
+    
 }
 
 .navbar-brand, .nav-item, footer {
@@ -14,7 +15,8 @@
 }
 
 .top-jumbatron {
-    background-color:lightslategrey;
+    background-color:#94c5cc9d;
+    height: 600px;
 }
 
 span.helptext a {
@@ -65,9 +67,26 @@ input {
 
 
 footer {
-    background-color: lightslategray;
+    background-color: #a1a6b473;
 }
 
 .navbar {
-    background-color: lightslategray;
+    background-color: #a1a6b473;
+}
+
+.article-title, .article-subtitle {
+    display: inline;
+}
+
+.article-image {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.masthead-text {
+    margin-top: 1rem;
+}
+
+.card-color {
+    background-color: #f8f8f8;
 }
