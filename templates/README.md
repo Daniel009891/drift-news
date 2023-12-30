@@ -114,28 +114,24 @@ The user is can sign up for an account using this page to allow them to comment 
 
 Its easy to login for returning user. Just fill in your username and password and you get logged in.
 
-![login]()
+![login](https://github.com/Daniel009891/drift-news/blob/main/docs/images/login.png?raw=true)
 
+<h3 id="new-comment"></h3>
 
-
-<h3 id="new-commentt"></h3>
-
+users can leave comments on articles after registering. it is rendered in a conversation style in descending order.
 
 ![new-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/comments.png?raw=true)
 
-<h3 id="edit-request">Edit Request</h3>
+<h3 id="edit-comment">Edit Request</h3>
+
+users also have the option to edit comments, through authentication they can only edit comments made by them.
+
+![edit-comment](https://github.com/Daniel009891/drift-news/blob/main/docs/images/edit-comment.png?raw=true)
+
+<h3 id="delete-comment">Delete Request</h3>
 
 
-![buttons]()
-
-![edit-request]()
-
-<h3 id="delete-request">Delete Request</h3>
-
-
-![buttons]()
-
-![delete-request]()
+![delete-comment]()
 
 ---
 
