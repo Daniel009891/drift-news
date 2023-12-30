@@ -289,7 +289,7 @@ Chrome dev tools were used throughout the development of the project to test res
 
 ### [W3C HTML Validator](https://validator.w3.org/)
 
-
+* 1 error unable to fix as may be a render issue regarding main closing tag.
 
 ### [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 
