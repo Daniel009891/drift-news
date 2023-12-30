@@ -60,21 +60,13 @@ Drift news targets anyone interested in the sport or motorsports in general, it 
 <h3 id="wireframe">Wireframes</h3>
 
 ![frontpage]()
-![frontpage#2]()
 
-![register account]()
-![login](
+![Detail]()
 
-### User loged in
+![contact]()
 
-![user overview]()
-![user request details]()
-![user presented candidates]()
 
-### Partner loged in
 
-![partner overview]()
-![partner request details]()
 
 
 ---
