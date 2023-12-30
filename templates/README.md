@@ -91,27 +91,21 @@ Drift news targets anyone interested in the sport or motorsports in general, it 
 To make the application as dynamic as possible, i want the navbar and footer to be the same in all of the application. Therefore, Django dynamic pages are used so the user always recognizes the default layout they're on.
 
 Navbar
-![navbar]()
+![navbar](https://github.com/Daniel009891/drift-news/blob/main/docs/images/nav-bar.png?raw=true)
 
 Footer
 ![footer]()
 
 <h3 id="homepage">Homepage</h3>
 
-
-![hero]()
-
+A big goal is to highlight the advantages as early as possible so the user gets sold on why they should register and use our application.
 
 
-![mockup and cta]()
+![jumbatron]()
 
+Articles are displayed in an ordered fashion with big images to catch the users attention.
 
-
-![partner cta]()
-
-
-
-![step-by-step]()
+![articles](https://github.com/Daniel009891/drift-news/blob/main/docs/images/article-list.png?raw=true)
 
 
 
