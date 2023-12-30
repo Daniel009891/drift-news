@@ -57,8 +57,8 @@
 
 </ul>
 
-
 ## User Stories Testing
+
 <h3 id="one">As a Site User I can comment on news articles I find interesting so that I can interact with like minded users</h3>
 Acceptance Criteria 1: I can leave a comment on the article and see it displayed once approved.
 
@@ -141,9 +141,12 @@ Acceptance Criteria 1: I can view contact form in the admin panel and mark it as
 
 Acceptance Criteria 2: I have the relevant information needed if an email reply is necessary.
 
-![admin contact list ]()
-
-![admin contact form information]()
+![admin contact list ](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-list.png?raw=true)
+The admin user can view a list of contact requests
+![admin contact form information](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-review.png?raw=true)
+open them to view the individual contact enquiries to view the information
+![admin contact complete](https://github.com/Daniel009891/drift-news/blob/main/docs/images/admin-contact-complete.png?raw=true)
+and mark them as complete once to enquiry is satisfied.
 
 <hr>
 
@@ -151,14 +154,26 @@ Acceptance Criteria 2: I have the relevant information needed if an email reply 
 
 <h3 id="navigation">Navigation Bar</h3>
 
+* All links correctly redirect to the correct pages for visitors.
+* Navbar is fully responsive on small/medium/large devices.
+* User sees correct link "logout" when logged in.
+* user sees correct links "register", "log in" when not logeed in.
+* Navbar collapse works on smaller devices.
+* contact us dropdown available for registered and non registered users.
 
 
 <h3 id="footer">Footer</h3>
 
-
+* All icon links work correctly.
+* All links open in a new page.
+* The footer appears at the end of the page using bootsrap.
 
 <h3 id="homepage">Homepage</h3>
 
+* All buttons work and link correctly.
+* Icons are being displayed correctly, however a favicon error is displayed in dev tools.
+* Images are displayed correctly.
+* Good contrast between text/images/buttons.
 
 
 <h3 id="signup">Signup page</h3>

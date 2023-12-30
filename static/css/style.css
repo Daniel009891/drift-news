@@ -16,7 +16,7 @@
 
 .top-jumbatron {
     background-color:#94c5cc9d;
-    height: 600px;
+    height: 400px;
 }
 
 span.helptext a {
@@ -76,10 +76,6 @@ footer {
     background-color: #a1a6b473;
 }
 
-.article-title, .article-subtitle {
-    display: inline;
-}
-
 .article-image {
     width: 100%;
     margin-top: 1rem;
@@ -93,10 +89,6 @@ footer {
     background-color: #f8f8f8;
     
 }
-
-/* #card {
-    text-align: center;
-} */
 
 .inline {
     display: inline;
